@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Profile from './Component/Profile'
+import myimage from './image/myPhoto.png'
 
 function App() {
+  const data = [
+    {
+      fullname: "Mohamed Ben Mohamed",
+      bio: 'I love teaching',
+      profession : 'Teacher'
+    },
+    
+  ];
+  const handleClick = (name)=> {alert(`My name is ${name} `)};
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Profile data={data} handleClick = {handleClick}> 
+        {myimage}
+      </Profile>
     </div>
   );
 }
+
 
 export default App;
